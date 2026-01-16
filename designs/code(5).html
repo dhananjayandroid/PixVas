@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PixVas | Contact Our Team</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f7f7f8",
+                        "background-dark": "#1a1c22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(33, 36, 44, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100 transition-colors duration-300">
+<div class="flex flex-col min-h-screen">
+<!-- Sticky Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-[#f0f1f5] dark:border-gray-800 bg-white/70 dark:bg-background-dark/70 backdrop-blur-md">
+<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="size-7" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight">PixVas</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Tools</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+<button class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-all">
+                        Get Started
+                    </button>
+</nav>
+<div class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</header>
+<!-- Main Content Section -->
+<main class="flex-1 flex flex-col items-center justify-center py-12 px-6">
+<div class="max-w-[760px] w-full">
+<!-- Headline -->
+<div class="text-center mb-10">
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Contact Our Team</h1>
+<p class="text-lg text-gray-600 dark:text-gray-400 max-w-lg mx-auto leading-relaxed">
+                        Have a question about our image processing tools or custom API solutions? We're here to help.
+                    </p>
+</div>
+<!-- Form Card -->
+<div class="bg-white dark:bg-[#21242c] rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] border border-[#e5e7eb] dark:border-gray-800 p-8 md:p-12 overflow-hidden relative">
+<!-- Decorative subtle gradient background -->
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<form class="relative z-10 space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Name Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Name</label>
+<input class="w-full h-12 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400" placeholder="Alex Rivera" type="text"/>
+</div>
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Work Email</label>
+<input class="w-full h-12 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400" placeholder="alex@company.com" type="email"/>
+</div>
+</div>
+<!-- Subject Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Subject</label>
+<input class="w-full h-12 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400" placeholder="How can we help?" type="text"/>
+</div>
+<!-- Message Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Message</label>
+<textarea class="w-full rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400 resize-none" placeholder="Tell us more about your needs..." rows="5"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-2">
+<button class="w-full md:w-auto min-w-[180px] bg-primary text-white h-14 rounded-lg font-bold text-base hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</form>
+<!-- Divider -->
+<div class="my-10 border-t border-[#f0f1f5] dark:border-gray-800 relative">
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white dark:bg-[#21242c] px-4 text-xs font-medium text-gray-400 uppercase tracking-widest">or</span>
+</div>
+<!-- Direct Inquiry Info -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Direct Email</p>
+<a class="text-sm font-bold hover:text-primary transition-colors" href="mailto:support@pixvas.com">support@pixvas.com</a>
+</div>
+</div>
+<div class="flex gap-4">
+<a class="size-10 rounded-lg border border-[#dbdfe6] dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" href="#">
+<img alt="Twitter X" class="size-4 dark:invert" data-alt="Twitter social icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJU0yqueprYrYV24FyLAxqg6BQCvCr66FwQIaDaNtojGHm6ijvI50yJGw_ioNs38H76IGUUJ2fZcK1k1SbCMW-v9hqytlNU4OFzi5diq3eoJl2O7uWc6T4LYfunkpt223OVPS4FJPXQg9y74LgS6VYm2RjQXbOhlfg-_ll6VclsdKVazUAoicJAjWR6hw_UilMr38FHVtA1Egc5454CjNgJW1z4uu0m4q84TTge9kfKnaNaPtVPVb3rl3-2OQpU21JZkFEjoarTw"/>
+</a>
+<a class="size-10 rounded-lg border border-[#dbdfe6] dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" href="#">
+<img alt="LinkedIn" class="size-4 dark:invert" data-alt="LinkedIn social icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxInh0Nfy_v32mdJca0631pG-3ZgcBSMBq-T0v848gf8eJMn39nyldxvXwuk4DE1fZwzdTaepSOYGt7q2GfxCDXcw4lbQ6VD6ZP4Tz1_b3V3xd04alj5CHnfLb8FwvTxvlyCmm5piIhA9h9qmQe374wZ2Aq2-SP41PDOHFfTkznAdaH6HgP9m68VsUjReQcRs1gRvYHJV-zssgWnLTzRFefyoS-4PhN18XPy7BttDzp9r-89syd5_B7mDLJ5z2k4lcwtu5sAtZyQ"/>
+</a>
+</div>
+</div>
+</div>
+<!-- Trust Badge -->
+<div class="mt-12 flex flex-wrap justify-center items-center gap-8 opacity-40 grayscale pointer-events-none">
+<span class="text-sm font-bold">TRUSTED BY TEAMS AT</span>
+<div class="h-6 w-24 bg-gray-400 rounded-md" style="mask-image: linear-gradient(to right, transparent, black, transparent);"></div>
+<div class="h-6 w-24 bg-gray-400 rounded-md" style="mask-image: linear-gradient(to right, transparent, black, transparent);"></div>
+<div class="h-6 w-24 bg-gray-400 rounded-md" style="mask-image: linear-gradient(to right, transparent, black, transparent);"></div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="py-8 px-6 border-t border-[#f0f1f5] dark:border-gray-800">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-gray-500">© 2024 PixVas Inc. Distraction-free image processing.</p>
+<div class="flex gap-6">
+<a class="text-xs text-gray-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-gray-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-xs text-gray-500 hover:text-primary transition-colors" href="#">Status</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

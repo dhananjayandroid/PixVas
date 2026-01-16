@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PixVas | Free Instant Image Tools</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f7f7f8",
+                        "background-dark": "#111318",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(37, 106, 244, 0.08) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 w-full border-b border-[#dbdfe6] dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+<div class="flex items-center gap-2">
+<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<span class="text-xl font-extrabold tracking-tight">PixVas</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#tools">Tools</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 border border-primary/20">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wide">Free Forever - No Account Needed</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="hero-gradient relative overflow-hidden px-6 pt-16 pb-12 lg:px-10 lg:pt-24">
+<div class="mx-auto max-w-5xl text-center">
+<div class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">lock_open_right</span> 
+                        100% Free • No Sign-up Required
+                    </span>
+</div>
+<h1 class="mb-6 text-5xl font-black leading-[1.1] tracking-tight text-[#111318] dark:text-white lg:text-7xl">
+                    Professional image tools.<br/><span class="text-primary">Instant and open.</span>
+</h1>
+<p class="mx-auto mb-16 max-w-2xl text-lg text-[#606e8a] dark:text-gray-400">
+                    High-end vectorization, background removal, and AI upscaling. No paywalls, no limits, no login. Just upload and process.
+                </p>
+</div>
+<div class="mx-auto max-w-7xl px-6 lg:px-10" id="tools">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+<div class="group flex flex-col justify-between rounded-3xl border border-[#dbdfe6] dark:border-white/10 bg-white dark:bg-[#1a1d24] p-8 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1">
+<div>
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-4xl">polyline</span>
+</div>
+<h3 class="mb-3 text-2xl font-bold">Vectorize</h3>
+<p class="mb-8 text-sm leading-relaxed text-[#606e8a] dark:text-gray-400">
+                                Transform logos and illustrations from pixels into crisp, scalable SVG paths instantly.
+                            </p>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-base font-bold text-white transition-all group-hover:bg-primary/90">
+                            Launch Vectorizer <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="group flex flex-col justify-between rounded-3xl border border-[#dbdfe6] dark:border-white/10 bg-white dark:bg-[#1a1d24] p-8 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1">
+<div>
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-4xl">auto_fix_high</span>
+</div>
+<h3 class="mb-3 text-2xl font-bold">Remove BG</h3>
+<p class="mb-8 text-sm leading-relaxed text-[#606e8a] dark:text-gray-400">
+                                Precise AI-powered background isolation for complex edges like hair and fabrics.
+                            </p>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-base font-bold text-white transition-all group-hover:bg-primary/90">
+                            Launch BG Remover <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="group flex flex-col justify-between rounded-3xl border border-[#dbdfe6] dark:border-white/10 bg-white dark:bg-[#1a1d24] p-8 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1">
+<div>
+<div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-4xl">aspect_ratio</span>
+</div>
+<h3 class="mb-3 text-2xl font-bold">Upscale</h3>
+<p class="mb-8 text-sm leading-relaxed text-[#606e8a] dark:text-gray-400">
+                                Enhance resolution up to 8k with neural networks that restore lost detail and texture.
+                            </p>
+</div>
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-base font-bold text-white transition-all group-hover:bg-primary/90">
+                            Launch Upscaler <span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 border-t border-[#dbdfe6] dark:border-white/10 mt-12">
+<div class="mx-auto max-w-7xl px-6 lg:px-10">
+<div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-white dark:bg-white/5 border border-transparent hover:border-primary/20 transition-all">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined text-4xl">verified</span>
+</div>
+<div>
+<h5 class="mb-2 text-lg font-bold">Studio Quality</h5>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">Pro-grade neural networks ensure clean edges and maximum fidelity for every output.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-white dark:bg-white/5 border border-transparent hover:border-primary/20 transition-all">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined text-4xl">bolt</span>
+</div>
+<div>
+<h5 class="mb-2 text-lg font-bold">Zero Friction</h5>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">No account required. No credits to buy. Just high-speed parallel processing at your fingertips.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-6 rounded-2xl bg-white dark:bg-white/5 border border-transparent hover:border-primary/20 transition-all">
+<div class="text-primary mt-1">
+<span class="material-symbols-outlined text-4xl">shield_lock</span>
+</div>
+<div>
+<h5 class="mb-2 text-lg font-bold">Private &amp; Secure</h5>
+<p class="text-sm text-[#606e8a] dark:text-gray-400">All uploads are processed securely and permanently deleted immediately after your session.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-[#111318] py-24 text-white">
+<div class="mx-auto max-w-7xl px-6 lg:px-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h2 class="mb-6 text-3xl font-bold tracking-tight lg:text-4xl">Everything you need,<br/><span class="text-primary">none of the bloat.</span></h2>
+<p class="text-gray-400 text-lg">
+                            PixVas was built for designers who need results now. We've stripped away the subscriptions and logins to provide the fastest image utility on the web.
+                        </p>
+<div class="mt-8 flex flex-wrap gap-4">
+<div class="flex items-center gap-2 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary">check_circle</span> No Watermarks
+                            </div>
+<div class="flex items-center gap-2 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary">check_circle</span> Unlimited Exports
+                            </div>
+<div class="flex items-center gap-2 text-sm text-gray-300">
+<span class="material-symbols-outlined text-primary">check_circle</span> High-Res Support
+                            </div>
+</div>
+</div>
+<div class="w-full md:w-1/3 bg-white/5 p-8 rounded-3xl border border-white/10 text-center">
+<div class="text-primary mb-4">
+<span class="material-symbols-outlined text-6xl">favorite</span>
+</div>
+<h4 class="text-xl font-bold mb-2">Community Funded</h4>
+<p class="text-sm text-gray-400 mb-6">PixVas stays free through donations and open-source contributions. No hidden costs, ever.</p>
+<a class="inline-block px-6 py-2 border border-white/20 rounded-full text-sm font-bold hover:bg-white hover:text-[#111318] transition-all" href="#">Support PixVas</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-[#dbdfe6] dark:border-white/10 bg-white dark:bg-[#0c0e12] py-16">
+<div class="mx-auto max-w-7xl px-6 lg:px-10">
+<div class="grid grid-cols-2 gap-12 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2">
+<div class="mb-6 flex items-center gap-2">
+<div class="flex h-6 w-6 items-center justify-center rounded bg-primary text-white">
+<span class="material-symbols-outlined text-xs">layers</span>
+</div>
+<span class="text-lg font-extrabold">PixVas</span>
+</div>
+<p class="mb-6 max-w-xs text-sm text-[#606e8a] dark:text-gray-400">
+                        The 100% free, no-login platform for professional image processing. Open tools for creative workflows.
+                    </p>
+<div class="flex gap-4">
+<a class="text-[#606e8a] hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-[#606e8a] hover:text-primary" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h6 class="mb-6 text-sm font-bold uppercase tracking-wider">Free Tools</h6>
+<ul class="space-y-4 text-sm text-[#606e8a] dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Vectorize Engine</a></li>
+<li><a class="hover:text-primary" href="#">BG Remover Pro</a></li>
+<li><a class="hover:text-primary" href="#">AI Upscaler</a></li>
+</ul>
+</div>
+<div>
+<h6 class="mb-6 text-sm font-bold uppercase tracking-wider">Resources</h6>
+<ul class="space-y-4 text-sm text-[#606e8a] dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">About</a></li>
+<li><a class="hover:text-primary" href="#">Contact</a></li>
+<li><a class="hover:text-primary" href="#">Support</a></li>
+</ul>
+</div>
+<div>
+<h6 class="mb-6 text-sm font-bold uppercase tracking-wider">Legal</h6>
+<ul class="space-y-4 text-sm text-[#606e8a] dark:text-gray-400">
+<li><a class="hover:text-primary" href="#">Privacy</a></li>
+<li><a class="hover:text-primary" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 border-t border-[#dbdfe6] dark:border-white/10 pt-8 text-center text-xs text-[#606e8a] dark:text-gray-500">
+                © 2024 PixVas. 100% Free Forever. No Account Needed.
+            </div>
+</div>
+</footer>
+</div>
+
+</body></html>

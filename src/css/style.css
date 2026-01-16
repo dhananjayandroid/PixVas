@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .dashed-border {
+        border: 2px dashed #e2e8f0;
+        border-radius: 1rem;
+    }
+    .dark .dashed-border {
+        border-color: #374151;
+    }
+}

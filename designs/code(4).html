@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vectorize Tool | PixVas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4da6ff",
+                        "background-light": "#f9fafa",
+                        "background-dark": "#16191d",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#101418] dark:text-slate-200 transition-colors duration-200">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#f0f2f5] dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-10 py-3">
+<div class="max-w-[1400px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">polyline</span>
+</div>
+<h2 class="text-[#101418] dark:text-white text-xl font-bold tracking-tight">PixVas</h2>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Workspace</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Templates</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-xl text-sm font-bold transition-all shadow-sm">
+                        Upgrade Pro
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[1400px] mx-auto px-6 py-8 flex flex-col gap-8">
+<!-- Hero Upload Section -->
+<section class="w-full">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-blue-400/20 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+<div class="relative flex flex-col items-center justify-center gap-6 rounded-xl border-2 border-dashed border-[#dae0e7] dark:border-slate-700 bg-white dark:bg-slate-900/50 px-6 py-12 transition-all hover:border-primary/50">
+<div class="flex size-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-3xl">cloud_upload</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<h3 class="text-[#101418] dark:text-white text-xl font-bold">Fast-Track Vectorization</h3>
+<p class="text-[#5e758d] dark:text-slate-400 text-sm">Drag &amp; drop or click to upload your high-res source (JPG, PNG, WEBP)</p>
+</div>
+<button class="bg-primary text-white flex items-center gap-2 px-8 py-3 rounded-xl font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+                        Select File
+                    </button>
+<p class="text-[10px] uppercase tracking-widest text-[#5e758d] font-bold">Maximum file size: 25MB</p>
+</div>
+</div>
+</section>
+<!-- Tool Workflow Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Workspace (Comparison) -->
+<div class="lg:col-span-9 flex flex-col gap-6">
+<!-- Tabs for View Modes -->
+<div class="flex items-center justify-between border-b border-[#dae0e7] dark:border-slate-800">
+<div class="flex gap-8">
+<button class="border-b-2 border-primary text-primary pb-3 pt-2 text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">view_sidebar</span> Comparison View
+                        </button>
+<button class="border-b-2 border-transparent text-[#5e758d] pb-3 pt-2 text-sm font-bold hover:text-primary transition-colors">
+                            Overlay
+                        </button>
+<button class="border-b-2 border-transparent text-[#5e758d] pb-3 pt-2 text-sm font-bold hover:text-primary transition-colors">
+                            Details
+                        </button>
+</div>
+<div class="flex gap-2 pb-2">
+<button class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors" title="Zoom In">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors" title="Zoom Out">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-slate-800 transition-colors" title="Reset View">
+<span class="material-symbols-outlined">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Comparison Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Original -->
+<div class="flex flex-col gap-4">
+<div class="group relative aspect-square w-full bg-white dark:bg-slate-900 rounded-xl shadow-soft border border-slate-100 dark:border-slate-800 overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+<!-- Mockup Image for Input -->
+<div class="z-10 w-4/5 h-4/5 rounded-lg bg-cover bg-center shadow-xl grayscale-[0.2]" data-alt="Abstract colorful portrait with pixelation visible" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDU79FzwKLnWsnBCPE1u6FEMdFdZjO2f56V5dqvPZF6TBNmzDGxdVzMxgFLeR1bqt_-1XRwceXWrpHdfa6jqxwq-gZ_5OUKRKP6U2wMjke53qOa8Hn_HNT54uFdgHd5ybdWMo_ygOE94GKRWGe4OMH-iqpkLod0RDTTTcUWWNQVrU1zBaQriIoCRsqD7Qi70YEK4vMPhF7aimdpukdo1-qSocctxkIqbIdSqvg6C1VqE_XOXNAtmsrvBWvhDcxPQmFEstbzmY5ZGA');">
+</div>
+<div class="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white text-[10px] px-2 py-1 rounded-md font-bold uppercase tracking-wider">Source</div>
+</div>
+<div class="flex items-center justify-between px-2">
+<div>
+<h4 class="text-sm font-bold">Input Source</h4>
+<p class="text-xs text-[#5e758d]">Original Raster Image • 1200x1200px</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">image</span>
+</div>
+</div>
+<!-- Vector Result -->
+<div class="flex flex-col gap-4">
+<div class="group relative aspect-square w-full bg-white dark:bg-slate-900 rounded-xl shadow-soft border border-slate-100 dark:border-slate-800 overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
+<!-- Mockup Image for Vector -->
+<div class="z-10 w-4/5 h-4/5 rounded-lg bg-cover bg-center shadow-xl border-2 border-primary/20" data-alt="Clean vectorized version of the portrait with smooth paths" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB21LGa9pjOWcWhMdsZ5BbtvqWmMogTTRNsYqRzPyJ_D1QEhPbJb22TO6cjqYgCXJ1RZ_x9AV1SkanhGdYN222bMG7Y-91iBgy8jQtvP-uye1LnRZKwZX7hB5-d_yFNTmf7EAFFokX5PIbwWUc1uBK694KpmuFPXWoXm8qzmhWVyoygCkSg2Bz6laKK_Z43ajJqZkpO1az10lLSIlcc4zn5edKkekzGJ3TF5JP-m-LhNmB_yifrXCVNc9I17dlu9-VcAtOczWyjIQ');">
+</div>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] px-2 py-1 rounded-md font-bold uppercase tracking-wider">Vector Preview</div>
+<div class="absolute bottom-4 right-4 animate-pulse bg-green-500 text-white size-3 rounded-full shadow-lg shadow-green-500/50"></div>
+</div>
+<div class="flex items-center justify-between px-2">
+<div>
+<h4 class="text-sm font-bold">Vector Preview</h4>
+<p class="text-xs text-[#5e758d]">SVG Output • Infinite Resolution</p>
+</div>
+<div class="flex gap-2">
+<button class="p-1.5 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-lg">download</span>
+</button>
+<button class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined text-lg">share</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- AdSense Placeholder -->
+<div class="w-full h-24 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-center text-[#5e758d] text-xs font-medium tracking-widest mt-4">
+                    ADVERTISEMENT SPACE
+                </div>
+</div>
+<!-- Right Sidebar (Settings) -->
+<aside class="lg:col-span-3 flex flex-col gap-6 sticky top-24">
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-soft border border-slate-100 dark:border-slate-800 p-6 flex flex-col gap-6">
+<div class="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+<span class="material-symbols-outlined text-primary">tune</span>
+<h3 class="font-bold text-base">Tool Settings</h3>
+</div>
+<!-- Simplify Paths Toggle -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="text-sm font-semibold">Simplify Paths</label>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</div>
+</div>
+<p class="text-[11px] text-[#5e758d]">Reduces the number of anchor points for cleaner curves.</p>
+</div>
+<!-- Path Precision Slider -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="text-sm font-semibold">Path Precision</label>
+<span class="text-xs font-bold text-primary px-2 py-0.5 bg-primary/10 rounded">85%</span>
+</div>
+<input class="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="85"/>
+</div>
+<!-- Number of Colors Input -->
+<div class="flex flex-col gap-3">
+<label class="text-sm font-semibold">Number of Colors</label>
+<div class="flex items-center gap-3">
+<button class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 transition-colors">-</button>
+<input class="flex-1 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-center text-sm font-bold focus:ring-1 focus:ring-primary py-1.5" type="number" value="16"/>
+<button class="size-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 transition-colors">+</button>
+</div>
+</div>
+<!-- Detail Level -->
+<div class="flex flex-col gap-3">
+<label class="text-sm font-semibold">Detail Level</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="px-2 py-1.5 text-[10px] font-bold rounded-lg bg-slate-100 dark:bg-slate-800 text-[#5e758d] hover:bg-primary hover:text-white transition-all">LOW</button>
+<button class="px-2 py-1.5 text-[10px] font-bold rounded-lg bg-primary text-white shadow-md shadow-primary/20">MID</button>
+<button class="px-2 py-1.5 text-[10px] font-bold rounded-lg bg-slate-100 dark:bg-slate-800 text-[#5e758d] hover:bg-primary hover:text-white transition-all">HIGH</button>
+</div>
+</div>
+<div class="pt-4 mt-2 border-t border-slate-100 dark:border-slate-800">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-primary/30 active:scale-95 transition-all">
+<span class="material-symbols-outlined">refresh</span>
+                            Update Result
+                        </button>
+</div>
+</div>
+<!-- Quick Actions Card -->
+<div class="bg-[#101418] dark:bg-primary/10 rounded-xl p-6 text-white flex flex-col gap-4">
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary">Export Options</h4>
+<div class="flex flex-col gap-2">
+<button class="w-full flex items-center justify-between px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+<span class="text-sm font-medium">Download SVG</span>
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+<button class="w-full flex items-center justify-between px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+<span class="text-sm font-medium">Download PNG</span>
+<span class="material-symbols-outlined text-sm">image</span>
+</button>
+<button class="w-full flex items-center justify-between px-4 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
+<span class="text-sm font-medium">Copy Vector Path</span>
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-[#f0f2f5] dark:border-slate-800 px-10 py-12 bg-white dark:bg-background-dark">
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xs">polyline</span>
+</div>
+<span class="text-[#101418] dark:text-white font-bold">PixVas</span>
+</div>
+<p class="text-sm text-[#5e758d] max-w-sm">The world's fastest raster-to-vector engine. Free, private, and powerful image processing for designers and creators.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-sm font-bold">Product</h5>
+<a class="text-sm text-[#5e758d] hover:text-primary" href="#">Background Remover</a>
+<a class="text-sm text-[#5e758d] hover:text-primary" href="#">Image Upscaler</a>
+<a class="text-sm text-[#5e758d] hover:text-primary" href="#">Vectorize Tool</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="text-sm font-bold">Legal</h5>
+<a class="text-sm text-[#5e758d] hover:text-primary" href="#">Terms of Service</a>
+<a class="text-sm text-[#5e758d] hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm text-[#5e758d] hover:text-primary" href="#">Cookies</a>
+</div>
+</div>
+<div class="max-w-[1400px] mx-auto mt-12 pt-8 border-t border-[#f0f2f5] dark:border-slate-800 flex justify-between items-center text-xs text-[#5e758d]">
+<p>© 2024 PixVas. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">Discord</a>
+<a class="hover:text-primary" href="#">GitHub</a>
+</div>
+</div>
+</footer>
+</body></html>

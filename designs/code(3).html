@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PixVas Result &amp; Processing View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#256af4",
+                        "background-light": "#f7f7f8",
+                        "background-dark": "#21242c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 12px -4px rgba(0, 0, 0, 0.03);
+        }
+        .canvas-bg {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
+<div class="flex min-h-screen flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-[#f0f1f5] dark:border-[#3a3f4a] bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-3">
+<div class="flex items-center gap-2">
+<div class="text-primary">
+<svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black tracking-tight">PixVas</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Tools</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">History</a>
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Documentation</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl bg-[#f0f1f5] dark:bg-[#3a3f4a] p-2 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-lg">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="User avatar profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA96q3dZniGIHnXenL3IheCMwEiIEZTw3QUbimruTurKR4dWkJMrQgooVVzQYxT_fO3AuZWAYbG-HKqM7OShZcctal1V5woHvyF7-bOZ13GL5FdcNlSU67hqjegpnQFjDpH8XUPqohFnRoqb4FNtMDIzNBMOtgUzcA3AEev11kWlVEGjOoR1r6E-cgqOdObn7No4rOcQGUbOOuS3KJE88EzlEibi_7XWw3ZLT9PK1shyqdRUnAQrfwtO6sGXNbDTD0eblKatRg3IA");'></div>
+</div>
+</div>
+</header>
+<main class="mx-auto flex w-full max-w-[1280px] grow flex-col px-6 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Content Area (Canvas & Status) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- PageHeading -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<p class="text-3xl font-black leading-tight tracking-tight">Enhancing your image...</p>
+</div>
+<p class="text-[#606e8a] dark:text-[#a3b1cc] text-base font-normal">Using PixVas AI Engine v2.0 • Ultra HD Mode Active</p>
+</div>
+<!-- ProgressBar -->
+<div class="flex flex-col gap-3 rounded-2xl bg-white dark:bg-[#2d313d] p-6 custom-shadow">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">sync</span>
+<p class="text-base font-bold">Refining textures &amp; lighting</p>
+</div>
+<p class="text-sm font-bold text-primary">65%</p>
+</div>
+<div class="h-1.5 w-full rounded-full bg-[#dbdfe6] dark:bg-[#3a3f4a] overflow-hidden">
+<div class="h-full rounded-full bg-primary transition-all duration-500" style="width: 65%;"></div>
+</div>
+<div class="flex items-center justify-between text-xs font-medium text-[#606e8a] dark:text-[#a3b1cc]">
+<span>Processing tiles... 42/64</span>
+<span>Estimated time remaining: 12 seconds</span>
+</div>
+</div>
+<!-- Image Canvas Card -->
+<div class="relative group">
+<div class="canvas-bg absolute inset-0 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 opacity-50"></div>
+<div class="relative flex flex-col items-center justify-center rounded-2xl border border-[#f0f1f5] dark:border-[#3a3f4a] bg-white/40 dark:bg-[#2d313d]/40 p-4 backdrop-blur-sm custom-shadow min-h-[500px]">
+<div class="w-full max-w-2xl relative overflow-hidden rounded-xl shadow-2xl">
+<!-- Blurred Preview/Skeleton -->
+<div class="aspect-[4/3] w-full bg-center bg-no-repeat bg-cover filter blur-md grayscale opacity-60" data-alt="Blurred artistic preview of image being processed" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFoABHcs8ouvXtu8Skck2zjsJX5BHwXdbwXXY9TUlCJHTib0-uX-lEep7O4Xf8WMYaj-X-xK_W9mbGFRuQoDAsbgPT4UTKVA9DvQ0lcWx1_3r3k3koIdDtsW2rbt8tdbfjQ2jFAFdkwQ0R4ymUFiDPb9_mS--6v9hUNPsXFBQt-T3dp-txsPhVFpAQ0_2WTlY880sQEkShyjkaTKYdiNEtdDf8fFxvKkUdAEcYUokhpM7e75ziMbLK7zcOrFzQJB6Slx4o_7zYhQ");'>
+</div>
+<!-- Progress Overlay Overlay -->
+<div class="absolute inset-0 flex items-center justify-center bg-black/10">
+<div class="rounded-full bg-white/90 dark:bg-black/80 px-4 py-2 text-sm font-bold shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined animate-spin text-sm">autorenew</span>
+                                        Generating Detail...
+                                    </div>
+</div>
+</div>
+<!-- Result Preview Text (from Card component) -->
+<div class="mt-6 flex w-full items-center justify-between px-4">
+<div>
+<p class="text-[#606e8a] dark:text-[#a3b1cc] text-xs font-bold uppercase tracking-widest">AI Upscale 4x • Neural De-noise</p>
+<p class="text-xl font-bold">Real-time Preview</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-white dark:bg-[#3a3f4a] border border-[#f0f1f5] dark:border-[#4a4f5a] shadow-sm hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="p-2 rounded-lg bg-white dark:bg-[#3a3f4a] border border-[#f0f1f5] dark:border-[#4a4f5a] shadow-sm hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined">compare</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar (Controls & Actions) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Action Panel -->
+<div class="rounded-2xl bg-white dark:bg-[#2d313d] p-6 custom-shadow border border-[#f0f1f5] dark:border-[#3a3f4a]">
+<h3 class="text-lg font-bold mb-4">Export Options</h3>
+<!-- ButtonGroup -->
+<div class="flex flex-col gap-3">
+<button class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl h-14 bg-primary text-white text-base font-bold transition-transform active:scale-[0.98] shadow-lg shadow-primary/25">
+<span class="material-symbols-outlined">download</span>
+<span>Download Result</span>
+</button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 rounded-xl h-12 bg-[#f0f1f5] dark:bg-[#3a3f4a] text-[#111318] dark:text-white text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Refine</span>
+</button>
+<button class="flex items-center justify-center gap-2 rounded-xl h-12 bg-[#f0f1f5] dark:bg-[#3a3f4a] text-[#111318] dark:text-white text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span>Restart</span>
+</button>
+</div>
+</div>
+<div class="mt-8 border-t border-[#f0f1f5] dark:border-[#3a3f4a] pt-6">
+<p class="text-xs font-bold text-[#606e8a] dark:text-[#a3b1cc] uppercase tracking-wider mb-4">Processing Details</p>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm">
+<span class="text-[#606e8a] dark:text-[#a3b1cc]">Original Size</span>
+<span class="font-semibold text-right">1024 x 1024 px</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-[#606e8a] dark:text-[#a3b1cc]">Target Size</span>
+<span class="font-semibold text-right text-primary">4096 x 4096 px</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-[#606e8a] dark:text-[#a3b1cc]">AI Model</span>
+<span class="font-semibold text-right">PixVas Ultra v2.0</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-[#606e8a] dark:text-[#a3b1cc]">Estimated File Size</span>
+<span class="font-semibold text-right">~12.4 MB</span>
+</div>
+</div>
+</div>
+<div class="mt-8 rounded-xl bg-primary/10 dark:bg-primary/5 p-4 border border-primary/20">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<div>
+<p class="text-sm font-bold text-primary">Pro Tip</p>
+<p class="text-xs leading-relaxed mt-1 text-primary/80">Try the "Lush" preset for landscape photos to automatically enhance greens and sky blues.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Info -->
+<div class="px-2">
+<p class="text-xs text-[#606e8a] dark:text-[#a3b1cc] leading-relaxed">
+                            PixVas ensures your privacy. All uploaded images are processed securely and deleted automatically after 24 hours. 
+                            <a class="text-primary font-bold hover:underline" href="#">Learn more about our security protocols.</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Tooltip/Notification Toast (Simulated) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 rounded-full bg-[#111318] px-6 py-3 text-white shadow-2xl dark:bg-white dark:text-[#111318]">
+<span class="material-symbols-outlined text-green-500">check_circle</span>
+<span class="text-sm font-bold">Image enhancement logic active</span>
+</div>
+</div>
+</body></html>

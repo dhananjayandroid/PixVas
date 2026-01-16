@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PixVas - AI Image Upscaler</title>
+    <link href="./src/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <style>
+        .custom-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 12px -4px rgba(0, 0, 0, 0.03);
+        }
+
+        .canvas-bg {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111318] dark:text-white antialiased">
+    <div class="flex min-h-screen flex-col">
+        <!-- TopNavBar -->
+        <header id="header-container"></header>
+
+        <main class="mx-auto flex w-full max-w-[1280px] grow flex-col px-6 py-8">
+
+            <!-- SECTION 1: UPLOAD (Default) -->
+            <div id="upload-section">
+                <div class="mb-8 text-center max-w-3xl mx-auto">
+                    <div class="flex items-center justify-center gap-3 mb-4">
+                        <span
+                            class="bg-primary/10 text-primary text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest">AI
+                            Super Resolution</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-black tracking-tight text-[#111318] dark:text-white mb-4">
+                        Upscale Images up to 4x
+                    </h1>
+                    <p class="text-[#606e8a] dark:text-gray-400 text-lg leading-relaxed">
+                        Enhance resolution and restore details instantly using advanced neural networks. <br
+                            class="hidden md:block"> 100% Client-side processing. Your images never leave your device.
+                    </p>
+                </div>
+
+                <div class="max-w-xl mx-auto">
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl p-2 shadow-sm border border-[#f0f1f5] dark:border-gray-800">
+                        <div id="drop-zone"
+                            class="dashed-border flex flex-col items-center justify-center py-16 px-10 transition-all hover:bg-primary/5 cursor-pointer group rounded-lg border-2 border-dashed border-[#dbdfe6] dark:border-gray-700">
+                            <div
+                                class="size-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                <span class="material-symbols-outlined text-primary text-3xl">add_photo_alternate</span>
+                            </div>
+                            <h3 class="text-[#111318] dark:text-white text-xl font-bold mb-2">Drop your image here</h3>
+                            <p class="text-[#606e8a] dark:text-gray-400 text-sm text-center mb-8">
+                                JPG, PNG, WebP up to 10MB.
+                            </p>
+                            <button id="browse-btn"
+                                class="flex min-w-[160px] items-center justify-center rounded-xl h-12 px-6 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                                Select File
+                            </button>
+                            <input type="file" id="file-input" accept="image/*" hidden />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-16">
+                    <div
+                        class="flex flex-col items-center text-center p-6 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 transition-all">
+                        <div class="text-primary mb-4 p-3 bg-primary/10 rounded-xl">
+                            <span class="material-symbols-outlined text-2xl">high_quality</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">4K Resolution</h3>
+                        <p class="text-sm text-[#606e8a] dark:text-gray-400">Upscale small images to print-quality sizes
+                            without pixelation.</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-6 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 transition-all">
+                        <div class="text-primary mb-4 p-3 bg-primary/10 rounded-xl">
+                            <span class="material-symbols-outlined text-2xl">auto_fix_high</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Detail Restoration</h3>
+                        <p class="text-sm text-[#606e8a] dark:text-gray-400">AI hallucinates realistic details to fix
+                            blurry, low-res photos.</p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-6 bg-white dark:bg-white/5 rounded-2xl border border-transparent hover:border-primary/20 transition-all">
+                        <div class="text-primary mb-4 p-3 bg-primary/10 rounded-xl">
+                            <span class="material-symbols-outlined text-2xl">security</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Private & Secure</h3>
+                        <p class="text-sm text-[#606e8a] dark:text-gray-400">Processing happens in your browser. No data
+                            is ever uploaded.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: PROCESSING (Hidden) -->
+            <div id="processing-section"
+                class="flex flex-col items-center justify-center w-full max-w-2xl mx-auto py-20 hidden">
+                <div class="flex flex-col items-center gap-6 text-center w-full">
+                    <div class="relative size-24">
+                        <svg class="animate-spin text-gray-200 dark:text-gray-700 w-full h-full"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                        <span
+                            class="material-symbols-outlined absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl text-primary animate-pulse">auto_awesome</span>
+                    </div>
+
+                    <h2 class="text-2xl font-bold">Enhancing Image...</h2>
+
+                    <div class="w-full flex flex-col gap-2">
+                        <div class="flex justify-between text-sm font-medium">
+                            <span>Processing tiles</span>
+                            <span id="progress-text">0%</span>
+                        </div>
+                        <div class="h-2 w-full rounded-full bg-[#dbdfe6] dark:bg-[#3a3f4a] overflow-hidden">
+                            <div id="progress-bar" class="h-full rounded-full bg-primary transition-all duration-300"
+                                style="width: 0%;"></div>
+                        </div>
+                        <p class="text-xs text-[#606e8a] dark:text-gray-400 mt-2">This may take a few seconds depending
+                            on your device speed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: RESULT (Hidden) -->
+            <div id="result-section" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start hidden">
+                <!-- Left Content Area (Canvas) -->
+                <div class="lg:col-span-8 flex flex-col gap-6">
+                    <div class="flex items-center gap-3">
+                        <button id="back-btn" onclick="location.reload()"
+                            class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <h2 class="text-2xl font-bold">Upscale Result</h2>
+                    </div>
+
+                    <!-- Image Canvas Card -->
+                    <div class="relative group">
+                        <div
+                            class="canvas-bg absolute inset-0 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 opacity-50">
+                        </div>
+                        <div
+                            class="relative flex flex-col items-center justify-center rounded-2xl border border-[#f0f1f5] dark:border-[#3a3f4a] bg-white/40 dark:bg-[#2d313d]/40 p-4 backdrop-blur-sm custom-shadow min-h-[500px]">
+
+                            <!-- Comparison Slider could implement here if time permits, for now just show result -->
+                            <div
+                                class="overflow-auto max-h-[700px] w-full rounded-xl shadow-2xl flex justify-center bg-checkered">
+                                <img id="result-preview" src="" alt="Upscaled Result"
+                                    class="max-w-full h-auto object-contain">
+                            </div>
+
+                            <!-- Hidden Original for reference -->
+                            <img id="original-preview" src="" class="hidden">
+
+                            <div class="mt-6 flex w-full items-center justify-between px-4">
+                                <div>
+                                    <p
+                                        class="text-[#606e8a] dark:text-[#a3b1cc] text-xs font-bold uppercase tracking-widest">
+                                        AI Upscale Complete</p>
+                                    <p class="text-xl font-bold">2x Enhancement</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar (Controls & Actions) -->
+                <div class="lg:col-span-4 flex flex-col gap-6 sticky top-24">
+                    <!-- Action Panel -->
+                    <div
+                        class="rounded-2xl bg-white dark:bg-[#2d313d] p-6 custom-shadow border border-[#f0f1f5] dark:border-[#3a3f4a]">
+                        <h3 class="text-lg font-bold mb-4">Export Options</h3>
+                        <!-- ButtonGroup -->
+                        <div class="flex flex-col gap-3">
+                            <button id="download-btn"
+                                class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl h-14 bg-primary text-white text-base font-bold transition-transform active:scale-[0.98] shadow-lg shadow-primary/25">
+                                <span class="material-symbols-outlined">download</span>
+                                <span>Download Result</span>
+                            </button>
+                            <button id="restart-btn"
+                                class="flex items-center justify-center gap-2 rounded-xl h-12 bg-[#f0f1f5] dark:bg-[#3a3f4a] text-[#111318] dark:text-white text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                                <span class="material-symbols-outlined text-sm">refresh</span>
+                                <span>Enhance Another</span>
+                            </button>
+                        </div>
+                        <div class="mt-8 border-t border-[#f0f1f5] dark:border-[#3a3f4a] pt-6">
+                            <p
+                                class="text-xs font-bold text-[#606e8a] dark:text-[#a3b1cc] uppercase tracking-wider mb-4">
+                                Processing Details</p>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-[#606e8a] dark:text-[#a3b1cc]">Original Size</span>
+                                    <span id="original-dimensions" class="font-semibold text-right">-</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-[#606e8a] dark:text-[#a3b1cc]">Target Size</span>
+                                    <span id="target-dimensions" class="font-semibold text-right text-primary">-</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-[#606e8a] dark:text-[#a3b1cc]">AI Model</span>
+                                    <span class="font-semibold text-right">GANS 2x</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer id="footer-container"></footer>
+    </div>
+
+    <script type="module" src="./src/js/layout.js"></script>
+    <script type="module" src="./src/js/upscale.js"></script>
+</body>
+
+</html>

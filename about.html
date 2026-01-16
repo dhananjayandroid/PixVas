@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PixVas | A Free Community Resource</title>
+    <link href="./src/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+
+    <style>
+        .abstract-pattern-1 {
+            background-color: #256af4;
+            background-image: radial-gradient(#ffffff33 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .abstract-gradient {
+            background: linear-gradient(135deg, #256af4 0%, #1e4bb5 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-white transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <header id="header-container"></header>
+        <main class="flex flex-col items-center">
+            <section class="w-full max-w-[1200px] px-6 py-16 md:py-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="flex flex-col gap-6">
+                        <div
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-wider w-fit">
+                            Free Forever • No Accounts
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
+                            A community tool for <span class="text-primary">everyone</span> to process
+                            images.
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-normal leading-relaxed">
+                            PixVas is a completely free resource for designers, developers, and
+                            creators. No logins, no
+                            subscriptions, and no hidden costs. Just high-speed processing directly in
+                            your browser.
+                        </p>
+                        <div class="flex gap-4 pt-4">
+                            <button
+                                class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-transform active:scale-95 shadow-lg shadow-primary/20">
+                                Start Processing
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 abstract-pattern-1 flex items-center justify-center">
+                            <div
+                                class="w-2/3 h-2/3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 transform -rotate-3 flex flex-col items-center justify-center p-8 text-white text-center">
+                                <span
+                                    class="material-symbols-outlined text-7xl mb-4 opacity-80">volunteer_activism</span>
+                                <p class="font-bold text-xl">Open Resource</p>
+                                <p class="text-sm opacity-70">Built for the community</p>
+                            </div>
+                            <div class="absolute top-10 right-10 w-24 h-24 bg-white/20 rounded-full blur-xl">
+                            </div>
+                            <div class="absolute bottom-10 left-10 w-32 h-32 bg-primary/30 rounded-full blur-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full bg-white dark:bg-gray-900/50 py-20 border-y border-gray-100 dark:border-gray-800">
+                <div class="max-w-[1200px] mx-auto px-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                        <div class="md:col-span-1">
+                            <h2 class="text-3xl font-bold tracking-tight mb-4">Why PixVas?</h2>
+                            <div class="h-1.5 w-16 bg-primary rounded-full"></div>
+                        </div>
+                        <div class="md:col-span-2 flex flex-col gap-8">
+                            <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                                We believe that essential creative tools should be accessible to
+                                everyone without barriers.
+                                PixVas was created to provide a professional-grade image processing
+                                suite that respects your
+                                time and your data.
+                            </p>
+                            <p class="text-lg text-gray-600 dark:text-gray-400">
+                                By utilizing modern browser technology, we run everything locally on
+                                your device. This
+                                eliminates our server costs, allowing us to offer the platform for free
+                                while ensuring your
+                                images never leave your computer.
+                            </p>
+                            <div class="grid grid-cols-3 gap-4 pt-4">
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+                                    <h4 class="text-primary font-bold text-2xl">$0</h4>
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                                        Always Free</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+                                    <h4 class="text-primary font-bold text-2xl">0</h4>
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                                        Logins Needed
+                                    </p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+                                    <h4 class="text-primary font-bold text-2xl">100%</h4>
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                                        Private</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full max-w-[1200px] px-6 py-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black tracking-tight mb-4 text-gray-900 dark:text-white">
+                        Our Core Principles
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">No strings attached.
+                        No hidden agendas.
+                        Just a better way to work with images.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="flex flex-col gap-6 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-10 transition-all">
+                        <div
+                            class="size-16 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined text-4xl">shield_lock</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">Absolute Privacy</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Your files never
+                                touch a server. All
+                                processing happens in your browser's memory and is wiped the moment you
+                                close the tab.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col gap-6 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-10 transition-all">
+                        <div
+                            class="size-16 rounded-2xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600">
+                            <span class="material-symbols-outlined text-4xl">all_inclusive</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">Total Accessibility</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">No sign-ups, no
+                                waitlists, and no
+                                premium tiers. Whether you're a student or a pro, you get the same
+                                powerful tools.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-col gap-6 rounded-3xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-10 transition-all">
+                        <div
+                            class="size-16 rounded-2xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600">
+                            <span class="material-symbols-outlined text-4xl">bolt</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3">Instant Speed</h3>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">By removing the
+                                upload and download
+                                steps to a server, we process your images at the speed of your hardware.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full bg-gray-50 dark:bg-gray-800/30 py-24">
+                <div class="max-w-[1200px] mx-auto px-6">
+                    <div class="flex flex-col md:flex-row gap-16 items-center">
+                        <div class="w-full md:w-1/2 flex flex-col gap-6">
+                            <h2 class="text-4xl font-black tracking-tight">How is this free?</h2>
+                            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                                Traditional SaaS tools charge you because they have to pay for expensive
+                                cloud servers to
+                                process your data.
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                                PixVas uses <span class="font-bold text-primary">Edge Computing</span>.
+                                We've built the
+                                logic into the website itself. Your computer does the work, so we don't
+                                have to pay for
+                                servers. This allows us to keep the platform free for the community
+                                indefinitely.
+                            </p>
+                            <div
+                                class="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                                <span class="material-symbols-outlined text-primary text-3xl">info</span>
+                                <p class="text-sm font-medium">We do not sell data. We do not show ads.
+                                    We just like
+                                    building cool things.</p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                            <div
+                                class="aspect-square bg-primary/10 rounded-3xl flex flex-col items-center justify-center text-primary p-6 text-center">
+                                <span class="material-symbols-outlined text-5xl mb-2">code</span>
+                                <span class="font-bold text-sm">Efficient Code</span>
+                            </div>
+                            <div
+                                class="aspect-square bg-green-500/10 rounded-3xl flex flex-col items-center justify-center text-green-600 p-6 text-center">
+                                <span class="material-symbols-outlined text-5xl mb-2">dns</span>
+                                <span class="font-bold text-sm">No Servers</span>
+                            </div>
+                            <div
+                                class="aspect-square bg-orange-500/10 rounded-3xl flex flex-col items-center justify-center text-orange-600 p-6 text-center">
+                                <span class="material-symbols-outlined text-5xl mb-2">groups</span>
+                                <span class="font-bold text-sm">Community Led</span>
+                            </div>
+                            <div
+                                class="aspect-square bg-purple-500/10 rounded-3xl flex flex-col items-center justify-center text-purple-600 p-6 text-center">
+                                <span class="material-symbols-outlined text-5xl mb-2">visibility_off</span>
+                                <span class="font-bold text-sm">No Tracking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full max-w-[1200px] px-6 py-20">
+                <div
+                    class="relative rounded-3xl overflow-hidden abstract-gradient p-12 md:p-20 text-center text-white shadow-2xl">
+                    <div class="absolute inset-0 opacity-10 pointer-events-none"
+                        style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;">
+                    </div>
+                    <div class="relative z-10 max-w-2xl mx-auto flex flex-col gap-8">
+                        <h2 class="text-4xl md:text-5xl font-black leading-tight">No sign-up. No credit
+                            card. Just tools.
+                        </h2>
+                        <p class="text-lg md:text-xl text-white/80">Join thousands of creators using
+                            PixVas for their daily
+                            workflow. High-performance image processing is just a click away.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="index.html#tools"
+                                class="bg-white text-primary px-10 py-4 rounded-xl font-black text-lg transition-all hover:scale-105 active:scale-95 shadow-xl inline-block text-center">
+                                Launch PixVas
+                            </a>
+                            <button
+                                onclick="navigator.clipboard.writeText('Check out PixVas - A 100% free, private image processing tool! https://pixvas.com').then(() => alert('Share text copied to clipboard!'))"
+                                class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                                Spread the word
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer id="footer-container"></footer>
+    </div>
+    <script type="module" src="./src/js/layout.js"></script>
+
+</body>
+
+</html>
