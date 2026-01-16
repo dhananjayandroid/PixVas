@@ -8,6 +8,12 @@ export default defineConfig({
     wasm(),
     topLevelAwait()
   ],
+  worker: {
+    format: 'es',
+    plugins: [
+      wasm()
+    ]
+  },
   build: {
     target: 'esnext',
     rollupOptions: {
