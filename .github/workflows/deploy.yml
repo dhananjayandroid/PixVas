@@ -16,14 +16,26 @@ jobs:
           key: ${{ secrets.ORACLE_KEY }}
           port: ${{ secrets.ORACLE_PORT || '22' }}
           script: |
-            # Navigate to the project directory
-            cd /media/external/disk/pixvas_site
+            # Set the target directory
+            TARGET="/media/external/disk/pixvas_site/PixVas"
             
-            # Pull the latest changes
-            git pull origin main
+            # Ensure directory exists
+            mkdir -p "$TARGET"
+            cd "$TARGET"
             
-            # Rebuild and restart containers
-            # -d: Detached mode
-            # --build: Build images before starting containers
+            # Check if it's a git repo, if not, initialize and fetch
+            if [ ! -d ".git" ]; then
+              echo "Initializing new repository..."
+              git init
+              git remote add origin https://github.com/dhananjayandroid/PixVas.git
+              git fetch origin
+              git checkout -f main
+              git branch --set-upstream-to=origin/main main
+            else
+              echo "Pulling latest changes..."
+              git pull origin main
+            fi
+            
+            # Rebuild and restart
             docker-compose down
             docker-compose up -d --build
