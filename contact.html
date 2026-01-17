@@ -18,6 +18,7 @@
     <meta name="description"
         content="Contact the PixVas team for support, inquiries, or feedback. We are here to help with your image processing needs." />
     <link rel="canonical" href="https://pixvas.com/contact.html" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <link href="./src/css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -65,19 +66,21 @@
                     <div
                         class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl">
                     </div>
-                    <form class="relative z-10 space-y-6">
+                    <form id="contact-form" class="relative z-10 space-y-6">
+                        <input type="hidden" name="access_key" value="53241cf8-e80c-47ce-976b-a1de708cab31">
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <!-- Name Field -->
                             <div class="flex flex-col gap-2">
                                 <label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Name</label>
-                                <input
+                                <input id="name" name="name"
                                     class="w-full h-12 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                     placeholder="Alex Rivera" type="text" />
                             </div>
                             <!-- Email Field -->
                             <div class="flex flex-col gap-2">
                                 <label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Work Email</label>
-                                <input
+                                <input id="email" name="email"
                                     class="w-full h-12 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                     placeholder="alex@company.com" type="email" />
                             </div>
@@ -85,14 +88,14 @@
                         <!-- Subject Field -->
                         <div class="flex flex-col gap-2">
                             <label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Subject</label>
-                            <input
+                            <input id="subject" name="subject"
                                 class="w-full h-12 rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                 placeholder="How can we help?" type="text" />
                         </div>
                         <!-- Message Field -->
                         <div class="flex flex-col gap-2">
                             <label class="text-sm font-semibold text-gray-700 dark:text-gray-300">Message</label>
-                            <textarea
+                            <textarea id="message" name="message"
                                 class="w-full rounded-lg border border-[#dbdfe6] dark:border-gray-700 bg-transparent p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400 resize-none"
                                 placeholder="Tell us more about your needs..." rows="5"></textarea>
                         </div>
@@ -105,6 +108,7 @@
                                 <span class="material-symbols-outlined text-sm">send</span>
                             </button>
                         </div>
+                        <div id="result" class="hidden"></div>
                     </form>
                     <!-- Divider -->
                     <div class="my-10 border-t border-[#f0f1f5] dark:border-gray-800 relative">
@@ -161,6 +165,7 @@
         <footer id="footer-container"></footer>
     </div>
     <script type="module" src="./src/js/layout.js"></script>
+    <script src="./src/js/contact.js"></script>
 </body>
 
 </html>
