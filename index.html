@@ -46,14 +46,46 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "PixVas",
-      "url": "https://pixvas.com/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://pixvas.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "PixVas",
+          "url": "https://pixvas.com/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://pixvas.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Vectorize Tool",
+          "url": "https://pixvas.com/vectorize.html",
+          "description": "Convert raster images to SVG vectors instantly."
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Background Remover",
+          "url": "https://pixvas.com/bg-remover.html",
+          "description": "Remove image backgrounds instantly with AI."
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Image Upscaler",
+          "url": "https://pixvas.com/editor.html",
+          "description": "Upscale low-resolution images up to 4x."
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "About PixVas",
+          "url": "https://pixvas.com/about.html"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Contact Us",
+          "url": "https://pixvas.com/contact.html"
+        }
+      ]
     }
     </script>
 </head>
