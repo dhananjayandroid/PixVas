@@ -3,5 +3,5 @@ services:
     build: .
     container_name: pixvas-web
     ports:
-      - "8080:80"
+      - "8999:80"
     restart: always
