@@ -5,6 +5,27 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>PixVas - Free AI Background Remover</title>
+  <meta name="description"
+    content="Remove image backgrounds instantly for free with AI. No signup required. Secure client-side processing for high-quality PNG transparent backgrounds." />
+  <meta name="keywords"
+    content="background remover, remove background, transparent background, free background remover, ai background removal, delete background" />
+  <link rel="canonical" href="https://pixvas.com/bg-remover.html" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pixvas.com/bg-remover.html" />
+  <meta property="og:title" content="PixVas - Free AI Background Remover" />
+  <meta property="og:description"
+    content="Remove image backgrounds instantly for free with AI. No signup required. Secure client-side processing for high-quality PNG transparent backgrounds." />
+  <meta property="og:image" content="https://pixvas.com/pixvas.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://pixvas.com/bg-remover.html" />
+  <meta property="twitter:title" content="PixVas - Free AI Background Remover" />
+  <meta property="twitter:description"
+    content="Remove image backgrounds instantly for free with AI. No signup required. Secure client-side processing for high-quality PNG transparent backgrounds." />
+  <meta property="twitter:image" content="https://pixvas.com/pixvas.png" />
   <link href="./src/css/style.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
     rel="stylesheet" />
@@ -12,6 +33,40 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="/logo.png" />
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "PixVas BG Remover",
+          "applicationCategory": "PhotographyApplication",
+          "operatingSystem": "Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": "AI Background Removal, Hair Detection, Transparent PNG Export",
+          "screenshot": "https://pixvas.com/pixvas.png"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pixvas.com/"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Background Remover",
+            "item": "https://pixvas.com/bg-remover.html"
+          }]
+        }
+    ]
+    </script>
 
 
   <style>
@@ -43,9 +98,7 @@
     }
 
     /* Target Result Image (Base) */
-    .compare-image.result {
-      /* This dictates the container size effectively if flex container depends on content */
-    }
+    /* .compare-image.result {} - Removed empty rule */
 
     .compare-overlay {
       position: absolute;
@@ -236,6 +289,114 @@
             </div>
           </div>
     </main>
+
+    <!-- SEO & Content Section -->
+    <section
+      class="max-w-[1000px] mx-auto px-6 pb-24 pt-24 mt-12 border-t border-[#dae0e7] dark:border-slate-800 flex flex-col gap-16">
+      <!-- How it Works -->
+      <div class="flex flex-col gap-8">
+        <h2 class="text-3xl font-bold tracking-tight text-[#101418] dark:text-white">Remove Backgrounds in Seconds</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex flex-col gap-4">
+            <div
+              class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">1
+            </div>
+            <h3 class="font-bold text-lg">Upload Photo</h3>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400 leading-relaxed">Select any photo with a clear subject.
+              Our tool works best on people, products, cars, and animals.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div
+              class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">2
+            </div>
+            <h3 class="font-bold text-lg">AI Detection</h3>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400 leading-relaxed">Our advanced AI model automatically
+              detects the foreground subject and creates a precise cut-out mask.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div
+              class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">3
+            </div>
+            <h3 class="font-bold text-lg">Download PNG</h3>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400 leading-relaxed">Save your image with a transparent
+              background as a high-quality PNG file, ready for design use.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center rounded-3xl bg-gray-50 dark:bg-slate-900/50 p-8 md:p-12">
+        <div class="flex flex-col gap-6">
+          <h2 class="text-3xl font-bold tracking-tight text-[#101418] dark:text-white">Why Choose Our Remover?</h2>
+          <ul class="flex flex-col gap-4">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+              <div>
+                <strong class="block text-[#101418] dark:text-white">Hair-Level Precision</strong>
+                <p class="text-sm text-[#5e758d] dark:text-gray-400">Handles complex edges like hair, fur, and
+                  semi-transparent objects effectively.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+              <div>
+                <strong class="block text-[#101418] dark:text-white">No Resolution Limits</strong>
+                <p class="text-sm text-[#5e758d] dark:text-gray-400">Unlike other free tools, we don't downscale your HD
+                  images. You get full-resolution output.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+              <div>
+                <strong class="block text-[#101418] dark:text-white">100% Private</strong>
+                <p class="text-sm text-[#5e758d] dark:text-gray-400">Images are processed in your browser. No data ever
+                  leaves your device.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="relative aspect-square md:aspect-auto h-full min-h-[300px] bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex items-center justify-center p-8">
+          <!-- Abstract Visual -->
+          <div
+            class="absolute inset-0 bg-[#00000008] dark:bg-[#ffffff05] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:10px_10px]">
+          </div>
+          <div class="z-10 text-center">
+            <span class="material-symbols-outlined text-6xl text-primary mb-4">auto_fix_high</span>
+            <p class="font-bold text-xl">Smart Detection</p>
+            <p class="text-xs text-[#5e758d] uppercase tracking-wider mt-2">AI Powered</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="flex flex-col gap-8">
+        <h2 class="text-3xl font-bold tracking-tight text-[#101418] dark:text-white">Common Questions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+            <h4 class="font-bold mb-2">How much does it cost?</h4>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400">It's completely free. PixVas is supported by the
+              community and does not charge for background removal.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+            <h4 class="font-bold mb-2">Does it work on phone?</h4>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400">Yes! Because PixVas runs in the browser, it works on
+              mobile devices (iOS/Android) as well as desktops.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+            <h4 class="font-bold mb-2">What happens to my photos?</h4>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400">Nothing. They process in your browser's memory and are
+              discarded as soon as you close the tab.</p>
+          </div>
+          <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+            <h4 class="font-bold mb-2">Can I batch process?</h4>
+            <p class="text-sm text-[#5e758d] dark:text-gray-400">Currently we support single image processing to ensure
+              maximum speed and privacy, but bulk tools are coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer id="footer-container"></footer>
   </div>
   <script type="module" src="./src/js/layout.js"></script>

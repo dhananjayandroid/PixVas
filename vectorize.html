@@ -6,6 +6,27 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Vectorize Tool | PixVas</title>
+    <meta name="description"
+        content="Convert raster images (JPG, PNG) to SVG vectors instantly. Free online image vectorizer with infinite scalability and path simplification." />
+    <meta name="keywords"
+        content="image to svg, vectorizer, raster to vector, jpg to svg, png to svg, free vectorizer, svg converter" />
+    <link rel="canonical" href="https://pixvas.com/vectorize.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pixvas.com/vectorize.html" />
+    <meta property="og:title" content="Vectorize Tool | PixVas" />
+    <meta property="og:description"
+        content="Convert raster images (JPG, PNG) to SVG vectors instantly. Free online image vectorizer with infinite scalability and path simplification." />
+    <meta property="og:image" content="https://pixvas.com/pixvas.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://pixvas.com/vectorize.html" />
+    <meta property="twitter:title" content="Vectorize Tool | PixVas" />
+    <meta property="twitter:description"
+        content="Convert raster images (JPG, PNG) to SVG vectors instantly. Free online image vectorizer with infinite scalability and path simplification." />
+    <meta property="twitter:image" content="https://pixvas.com/pixvas.png" />
     <link href="./src/css/style.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -40,6 +61,40 @@
             border-radius: 10px;
         }
     </style>
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    [
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "PixVas Vectorizer",
+          "applicationCategory": "DesignApplication",
+          "operatingSystem": "Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": "Raster to SVG conversion, Path Simplification, Infinite Scalability",
+          "screenshot": "https://pixvas.com/pixvas.png"
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://pixvas.com/"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Vectorize Tool",
+            "item": "https://pixvas.com/vectorize.html"
+          }]
+        }
+    ]
+    </script>
 </head>
 
 <body
@@ -59,7 +114,7 @@
                         <span class="material-symbols-outlined text-3xl">cloud_upload</span>
                     </div>
                     <div class="flex flex-col items-center gap-2">
-                        <h3 class="text-[#101418] dark:text-white text-xl font-bold">Fast-Track Vectorization</h3>
+                        <h1 class="text-[#101418] dark:text-white text-xl font-bold">Fast-Track Vectorization</h1>
                         <p class="text-[#5e758d] dark:text-slate-400 text-sm">Drag &amp; drop or click to upload your
                             high-res source (JPG, PNG, WEBP)</p>
                     </div>
@@ -80,7 +135,12 @@
             <div class="lg:col-span-9 flex flex-col gap-6">
                 <!-- Tabs for View Modes -->
                 <div class="flex items-center justify-between border-b border-[#dae0e7] dark:border-slate-800">
-                    <div class="flex gap-8">
+                    <div class="flex gap-4 items-center">
+                        <button onclick="location.reload()"
+                            class="mr-2 p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                            title="Back to Upload">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
                         <button
                             class="border-b-2 border-primary text-primary pb-3 pt-2 text-sm font-bold flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm">view_sidebar</span> Comparison View
@@ -221,6 +281,116 @@
             </aside>
         </div>
     </main>
+
+    <!-- SEO & Content Section -->
+    <section
+        class="max-w-[1000px] mx-auto px-6 pb-24 pt-24 mt-12 border-t border-[#dae0e7] dark:border-slate-800 flex flex-col gap-16">
+        <!-- How it Works -->
+        <div class="flex flex-col gap-8">
+            <h2 class="text-3xl font-bold tracking-tight text-[#101418] dark:text-white">How to Convert JPG to SVG</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col gap-4">
+                    <div
+                        class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                        1</div>
+                    <h3 class="font-bold text-lg">Upload Image</h3>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400 leading-relaxed">Drag and drop any raster image
+                        (JPG, PNG, WEBP) into the upload zone. We support high-resolution files up to 25MB.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div
+                        class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                        2</div>
+                    <h3 class="font-bold text-lg">Auto-Process</h3>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400 leading-relaxed">Our in-browser vectorization
+                        engine instantly traces shapes and paths. Adjust path precision and simplification settings in
+                        real-time.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div
+                        class="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                        3</div>
+                    <h3 class="font-bold text-lg">Download SVG</h3>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400 leading-relaxed">Export your scalable vector
+                        graphic instantly. Perfect for logos, illustrations, web design, and print media.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center rounded-3xl bg-gray-50 dark:bg-slate-900/50 p-8 md:p-12">
+            <div class="flex flex-col gap-6">
+                <h2 class="text-3xl font-bold tracking-tight text-[#101418] dark:text-white">Why Use PixVas Vectorizer?
+                </h2>
+                <ul class="flex flex-col gap-4">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+                        <div>
+                            <strong class="block text-[#101418] dark:text-white">Infinite Scalability</strong>
+                            <p class="text-sm text-[#5e758d] dark:text-gray-400">Convert pixelated rasters into
+                                mathematical paths that never lose quality, no matter how much you zoom.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+                        <div>
+                            <strong class="block text-[#101418] dark:text-white">Total Privacy</strong>
+                            <p class="text-sm text-[#5e758d] dark:text-gray-400">All processing happens locally in your
+                                browser via WebAssembly. Your images are never uploaded to our servers.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-green-500 mt-1">check_circle</span>
+                        <div>
+                            <strong class="block text-[#101418] dark:text-white">Clean Optimizations</strong>
+                            <p class="text-sm text-[#5e758d] dark:text-gray-400">Our algorithm automatically simplifies
+                                complex paths to reduce file size while maintaining visual fidelity.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div
+                class="relative aspect-square md:aspect-auto h-full min-h-[300px] bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex items-center justify-center p-8">
+                <!-- Abstract Visual -->
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(#256af4_1px,transparent_1px)] [background-size:20px_20px] opacity-10">
+                </div>
+                <div class="z-10 text-center">
+                    <span class="material-symbols-outlined text-6xl text-primary mb-4">polyline</span>
+                    <p class="font-bold text-xl">Vector Quality</p>
+                    <p class="text-xs text-[#5e758d] uppercase tracking-wider mt-2">Professional Standard</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="flex flex-col gap-8">
+            <h2 class="text-3xl font-bold tracking-tight text-[#101418] dark:text-white">Frequency Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+                    <h4 class="font-bold mb-2">Is this tool really free?</h4>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400">Yes, PixVas Vectorizer is 100% free forever. We
+                        don't require sign-ups, credits, or subscriptions.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+                    <h4 class="font-bold mb-2">What file formats can I upload?</h4>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400">You can upload any standard image format
+                        including JPG, PNG, and WEBP. The output will always be standard SVG code.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+                    <h4 class="font-bold mb-2">Is my data secure?</h4>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400">Absolutely. We use local browser processing
+                        technology. Your images stay on your device and are never sent to a remote server.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-[#dbdfe6] dark:border-slate-800">
+                    <h4 class="font-bold mb-2">Can I use the designs commercially?</h4>
+                    <p class="text-sm text-[#5e758d] dark:text-gray-400">Yes, you own the copyright to your output
+                        files. We do not claim any rights over your processed images.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer id="footer-container"></footer>
     <script type="module" src="./src/js/layout.js"></script>
