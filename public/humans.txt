@@ -1,0 +1,11 @@
+/* TEAM */
+  Creator: Developer
+  Contact: support@apprerum.com
+  Twitter: @AppRerum
+  Location: Global
+
+/* SITE */
+  Last update: 2026/02/01
+  Language: English
+  Doctype: HTML5
+  IDE: VS Code
